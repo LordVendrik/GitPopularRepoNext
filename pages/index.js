@@ -1,7 +1,3 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Link from 'next/link'
-import {useState} from 'react'
 import Header from '../components/Header'
 import Main from '../components/Main'
 
@@ -25,6 +21,10 @@ export async function getStaticProps() {
   const data = await res.json();
 
   return {
-    props: {Repo:data}
+    props: {
+      Repo:data
+    },
+    revalidate:10
   }
+
 }
